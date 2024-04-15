@@ -22,8 +22,3 @@ class Account:
             self.stan -= amount
 
 
-a = car(1999, 199, 4.5)
-a = car(1999, 199, 4.5, )
-print(a.year)
-a.deposit(2)
-print(a.state)
