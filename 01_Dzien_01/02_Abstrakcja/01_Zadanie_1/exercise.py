@@ -5,6 +5,16 @@ random_usdpln_rates = [3.5]
 for _ in range(50):
     random_usdpln_rates.append(round(random_usdpln_rates[-1] + random.random() * 0.2 - 0.1, 2))
 
+class CommandPrompt:
+    buy = ('buy', 'b')
+    sell = ('sell', 's')
+    wait = ('wait', 'w', '')
+    def __init__(self, buy, sell, wait):
+            self.commands = buy + sell + wait
+    def ask(self):
+        while input() not in commadns:
+
+
 
 def main(usdpln_rates):
     wallet_pln = 100.0
