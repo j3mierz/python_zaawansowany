@@ -16,8 +16,7 @@ class Discount20Percent(Cart):
 
 class Above3Products(Cart):
     def summary(self):
-        user_cart = super().summary()
-        user_cart = sorted(user_cart)
+        user_cart = sorted(super().summary())
         if len(user_cart) > 3:
             user_cart[0] = (0, user_cart[0][1])
         return user_cart
@@ -31,7 +30,7 @@ a.add(50, "towel")
 print(a.summary())
 
 b = Above3Products()
-b.add(10, "siekiera")
+b.add(1000, "siekiera")
 b.add(100, "kostka")
 b.add(30, "pomidor")
 b.add(50, "towel")
