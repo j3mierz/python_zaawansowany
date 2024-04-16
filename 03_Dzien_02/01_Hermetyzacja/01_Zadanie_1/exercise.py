@@ -1,7 +1,7 @@
 class Square:
     def __init__(self, side):
         self._side = side
-        self._circuit = 4 * side
+        self._perimeter = 4 * side
         self._area = side * side
         self._diagonal = side * (2 ** 0.5)
 
@@ -14,15 +14,15 @@ class Square:
     def get_diagonal(self):
         return self._diagonal
 
-    def get_circuit(self):
-        return self._circuit
+    def get_perimeter(self):
+        return self._perimeter
 
     def set_side(self, new_side):
         self.__init__(new_side)
 
     def set_area(self, new_area):
-
         self.__init__(new_area ** 0.5)
+
     def set_perimeter(self, new_perimeter):
         self.__init__(new_perimeter / 4)
 
