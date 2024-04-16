@@ -19,7 +19,8 @@ class SingleChoiceQuestion:
         return self.answers[user.index(result)]
 
 
-class Questionnaire(SingleChoiceQuestion):
+class Questionnaire:
+
     def __init__(self, title):
         self.title = title
         self.questions = []
@@ -30,6 +31,7 @@ class Questionnaire(SingleChoiceQuestion):
     def run(self):
         for i in self.questions:
             i.ask()
+        return None
 
 
 questionnaire = Questionnaire('Ankieta dotycząca zadowolenia z wyboru laptopa')
@@ -44,4 +46,5 @@ q3 = SingleChoiceQuestion('Czy polecisz go znajomemu?',
 questionnaire.add_question(q1)
 questionnaire.add_question(q2)
 questionnaire.add_question(q3)
-answers = questionnaire.run()
+poll = questionnaire
+poll.run()
