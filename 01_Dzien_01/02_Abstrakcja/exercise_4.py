@@ -1,7 +1,3 @@
-class Questionnaire:
-    def __init__(self):
-        pass
-
 class SingleChoiceQuestion:
     def __init__(self, question, answers):
         self.question = question
@@ -23,5 +19,29 @@ class SingleChoiceQuestion:
         return self.answers[user.index(result)]
 
 
-a = SingleChoiceQuestion('Welcome to Pytho?n', ['sie', 'sdd', 'sds', 'd2d3'])
-print(a.ask())
+class Questionnaire(SingleChoiceQuestion):
+    def __init__(self, title):
+        self.title = title
+        self.questions = []
+
+    def add_question(self, question):
+        self.questions.append(question)
+
+    def run(self):
+        for i in self.questions:
+            i.ask()
+
+
+questionnaire = Questionnaire('Ankieta dotycząca zadowolenia z wyboru laptopa')
+
+q1 = SingleChoiceQuestion('Matryca', ['mniej niż 15 cali', 'od 15 do 17 cali', 'więcej niż 17 cali'])
+
+q2 = SingleChoiceQuestion('Rodzaj ekranu', ['matowy', 'błyszczący'])
+
+q3 = SingleChoiceQuestion('Czy polecisz go znajomemu?',
+                          ['zdecydowanie tak', 'raczej tak', 'nie mam zdania', 'raczej nie', 'zdecydowanie nie'])
+
+questionnaire.add_question(q1)
+questionnaire.add_question(q2)
+questionnaire.add_question(q3)
+answers = questionnaire.run()
