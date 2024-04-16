@@ -5,6 +5,7 @@ import exercise
 
 class PriceTestCase(unittest.TestCase):
     def test_class_Price_is_present(self):
+
         self.assertTrue(exercise.Price)
 
     def test_class_Price_accepts_one_argument_and_stores_it_as_value_attr(self):

@@ -18,3 +18,4 @@ class Student:
                         cls(row[0], row[1], row[2], int(row[3]), float(row[4]))
                     )
         return students
+
